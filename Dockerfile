@@ -13,4 +13,9 @@ RUN curl https://bitbucket.org/ariya/phantomjs/downloads/phantomjs-${PHANTOMJS_V
     mv phantomjs-${PHANTOMJS_VERSION}-linux-x86_64/bin/phantomjs /usr/local/bin &&\
     rm -rf phantomjs-${PHANTOMJS_VERSION}-linux-x86_64
 
+RUN curl -L https://github.com/openshift/origin/releases/download/v1.5.0-rc.0/openshift-origin-client-tools-v1.5.0-rc.0-49a4a7a-linux-64bit.tar.gz | \
+    tar -zx && \
+    mv openshift*/oc /usr/local/bin && \
+    rm -rf openshift-origin-client-tools-*
+
 USER 1001
